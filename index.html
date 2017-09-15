@@ -2,23 +2,66 @@
 <html>
   <head>
     <title>KMLAONLINE</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="container">
-      <table class="table table-bordered table-striped">
-        <tr style="background-color:rgba(210, 0, 0, 0.34)">
-          <td>구분</td>
-          <td>학교수</td>
-          <td>학급수</td>
-        </tr>
-        <tr>
-          <td>
-            hello
-          </td>
-        </tr>
-      </table>
+      <div class="accuse" id="accuse" style="display:flex">
+        <div class="col-md-4" style="display:inline-block">
+          <form class="form-horizontal">
+            <label for="name">Name</label>
+            <input class="radius" id="name" type="text" placeholder=" name" />
+
+            <br />
+            <label>Grade</label>
+            <div class="grade"><label for="one">1</label> <input style="margin-left:2px" id="one" type="radio" name="grade" value="1"/></div>
+            <div class="grade"><label for="two">2</label><input style="margin-left:2px" id="two" type="radio" name="grade" value="2"/></div>
+            <div class="grade"><label for="three">3</label><input style="margin-left:2px" id="three" type="radio" name="grade" value="3"/></div>
+
+            <br />
+            <label for="date">Date</label>
+            <input class="radius" id="date" type="date" name="date"  />
+          </form>
+        </div>
+        <div class="col-md-4" style="display:inline-block">
+          <form class="form-horizontal">
+            <label for="accuser">Accused by</label>
+            <input class="radius" id="accuser" type="text" placeholder=" accuser" />
+
+            <br />
+            <label for="article">Violated Article</label>
+            <input class="radius" id="article" type="text" placeholder=" article"/>
+            <br /> <br />
+          </form>
+        </div>
+
+        <div class="col-md-1" style="display:inline-block">
+          <form class="form-horizontal">
+            <button id="button" type="button" onclick="submitData()">SUBMIT!</button>
+            <br /> <br />
+          </form>
+        </div>
+      </div>
+      <div>
+        <table class="table table-bordered table-striped" id="list" >
+          <thead>
+            <tr style="background-color:rgba(210, 0, 0, 0.34)">
+              <td>No</td>
+              <td>Grade</td>
+              <td>Name</td>
+              <td>Date</td>
+              <td>Accused by</td>
+              <td>Violated Article</td>
+              <td>Points</td>
+              <td>Sum</td>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </div>
+
   </body>
 </html>

@@ -1,3 +1,28 @@
-table.ex{
-  background-color: red !important;
+*{
+  font-family: 'Oswald', sans-serif;
+}
+
+div.accuse{
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+}
+
+div.grade{
+  display: inline;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.radius{
+  border-radius: 10px;
+}
+
+#button{
+  background-color:rgba(0, 210, 65, 0.3);
+}
+
+#button:hover{
+  background-color:rgba(0, 221, 48, 0.62);
 }
