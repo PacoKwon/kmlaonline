@@ -9,6 +9,9 @@
   </head>
   <body>
     <div class="container">
+      <div class="row" id="top">
+        <h1>KMLA COURT LIST</h1>
+      </div>
       <div class="accuse" id="accuse" style="display:flex">
         <div class="col-md-4" style="display:inline-block">
           <form class="form-horizontal">
@@ -28,12 +31,11 @@
         </div>
         <div class="col-md-4" style="display:inline-block">
           <form class="form-horizontal">
+            <label for="article">Violated Article</label>
+            <select class="radius" id="article"></select>
+            <br />
             <label for="accuser">Accused by</label>
             <input class="radius" id="accuser" type="text" placeholder=" accuser" />
-
-            <br />
-            <label for="article">Violated Article</label>
-            <input class="radius" id="article" type="text" placeholder=" article"/>
             <br /> <br />
           </form>
         </div>
@@ -46,7 +48,7 @@
         </div>
       </div>
       <div>
-        <table class="table table-bordered table-striped" id="list" >
+        <table class="table table-striped border-radius: 5px" id="list" >
           <thead>
             <tr style="background-color:rgba(210, 0, 0, 0.34)">
               <td>No</td>
@@ -62,6 +64,18 @@
         </table>
       </div>
     </div>
+    <script>
+      function addOptions(){
+        var sel = document.getElementById('article');
 
+        var len = articles[0].length;
+        for(var i = 0; i < len; i++){
+          var ele = document.createElement('option');
+          ele.text = articles[0][i];
+          sel.add(ele);
+        }
+      }
+      addOptions();
+    </script>
   </body>
 </html>
