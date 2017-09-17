@@ -152,15 +152,15 @@ function submitData(){
       deletes cells below the row that was inserted last
       then increases rowSpan of top row by 1
     */
-    
+
     if(check){
       arr = document.getElementById('list').rows;
 
       //to merge cells using rowSpan, cells [0,1,2,7] below must be deleted first.
-      arr[insertIndex].deleteCell(0);
-      arr[insertIndex].deleteCell(0);
-      arr[insertIndex].deleteCell(0);
-      arr[insertIndex].deleteCell(4);
+      arr[insertIndex + 1].deleteCell(0);
+      arr[insertIndex + 1].deleteCell(0);
+      arr[insertIndex + 1].deleteCell(0);
+      arr[insertIndex + 1].deleteCell(4);
 
       for(var i = 0; i < overlap.length; i++){
         arr[getInsertIndex(index)].cells[overlap[i]].rowSpan = ""+person.count;
