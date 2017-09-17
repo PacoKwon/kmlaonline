@@ -14,9 +14,9 @@
       </div>
       <div class="accuse" id="accuse" style="display:flex">
         <div class="col-md-4" style="display:inline-block">
-          <form class="form-horizontal">
+          <form class="form-horizontal" onsubmit="return false">
             <label for="name">Name</label>
-            <input class="radius" id="name" type="text" placeholder=" name" />
+            <input class="radius" id="name" type="text" placeholder=" name" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"/>
 
             <br />
             <label>Grade</label>
@@ -30,12 +30,12 @@
           </form>
         </div>
         <div class="col-md-4" style="display:inline-block">
-          <form class="form-horizontal">
+          <form class="form-horizontal" onsubmit="return false">
             <label for="article">Violated Article</label>
             <select class="radius" id="article"></select>
             <br />
             <label for="accuser">Accused by</label>
-            <input class="radius" id="accuser" type="text" placeholder=" accuser" />
+            <input class="radius" id="accuser" type="text" placeholder=" accuser" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"  />
             <br /> <br />
           </form>
         </div>

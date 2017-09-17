@@ -1,22 +1,14 @@
+//two-dimensional array. first array includes articles. second array includes penalty points respective to articles in first array. *incomplete*
 var articles = [["Violated self-study regulation", "Violated outdoor regulation", "Late for school", "Dress code", "Destroyed school property", "Violated cleaning regulation", "Violated curfew regulation(3)", "Violated curfew regulation(8)", "Violated food regulation(2)", "Violated food regulation(10)", "Violated computer regulation", "Used electronic device", "EOP Violation", "Lied", "Absent from Court", "Late for Court", "Did not follow teacher's direction(3)", "Did not follow teacher's direction(4)", "Did not follow teacher's direction(5)", "Late for morning exercise", "Absent from morning exercise", "Late for self-study", "Insolent attitude"],
 [2, 2, 2, 2, 2, 1, 3, 8, 2, 10, 5, 5, 2, 5, 3, 2, 3, 4, 5, 2, 3, 1, 2]];
-//insolent attitude
-//¡°ÀÚ½À ºÒ·®¡±, ¡°¹«´ÜÀÌÅ»¡±, ¡°Áö°¢¡±, ¡°º¹Àå ºÒ·®¡±, ¡°±â¹° ÆÄ¼Õ¡±, ¡°Ã»¼Ò ºÒ·®¡±, ¡°Åë±Ý À§¹Ý¡±, ¡°Åë±Ý ¹æÁ¶¡±, ¡°½ÄÇ° À§¹Ý(2)¡±, ¡°½ÄÇ° À§¹Ý(10)¡±, ¡°ÄÄÇ»ÅÍ À§¹Ý¡±, ¡°Àü¿­±â¡±, ¡°EOP À§¹Ý¡±, ¡°°ÅÁþ¸»¡±, ¡°¹ýÁ¤ ºÒÂü¡±, ¡°¹ýÁ¤ Áö°¢¡±, ¡°Áö½Ã ºÒÀÌÇà(3)¡±, ¡°Áö½Ã ºÒÀÌÇà(4)¡±, ¡°Áö½Ã ºÒÀÌÇà(5)¡±, ¡°¾ÆÄ§±â Áö°¢¡±, ¡°¾ÆÄ§±â ºÒÂü¡±, ¡°ÀÚ½À Áö°¢¡±
+//ï¿½ï¿½ï¿½Ú½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½â¹° ï¿½Ä¼Õ¡ï¿½, ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¡ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½(2)ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½(10)ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¡ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â¡±, ï¿½ï¿½EOP ï¿½ï¿½ï¿½Ý¡ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(3)ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(4)ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(5)ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
+//array for person objects
 var people = [];
+//index number of cells to be merged
 var overlap = [0, 1, 2, 7];
 
-function newRow(){
-  var table = document.getElementById('list');
-  table.insertRow(table.rows.length);
-  var row = table.rows[table.rows.length - 1];
-  for(var i = 0; i < table.rows[0].cells.length; i++){
-    row.insertCell();
-  }
-
-  return table.rows[table.rows.length-1];
-}
-
+//person object constructor function
 function Person(number, grade, name, points){
   this.number = number;
   this.grade = grade;
@@ -25,25 +17,69 @@ function Person(number, grade, name, points){
   this.count = 1;
 }
 
+//returns new row
+function newRow(){
+  var table = document.getElementById('list');
+  table.insertRow(table.rows.length);
+  var row = table.rows[table.rows.length - 1];
+  for(var i = 0; i < table.rows[0].cells.length; i++){
+    row.insertCell();
+  }
+  return table.rows[table.rows.length - 1];
+}
+
+//returns point value of article
 function getPoints(article){
   for(var i = 0; i < articles[0].length; i++){
     if(articles[0][i] === article) return articles[1][i];
   }
 }
 
+//returns value of radio
+function setGrade(){
+  var grade;
+  if(document.getElementById('one').checked){
+    grade = document.getElementById('one').value;
+  }
+  else if(document.getElementById('two').checked){
+    grade = document.getElementById('two').value;
+  }
+  else if(document.getElementById('three').checked){
+    grade = document.getElementById('three').value;
+  }
+  return grade;
+}
 
 //returns index of row
-function findPerson(person){
+function findPerson(person, grade){
   for(var index = 0; index < people.length; index++){
-    if(people[index].name === person) return people[index].number;
+    if(people[index].name === person && people[index].grade === grade) return people[index].number;
   }
   return -1;
 }
 
+//returns index value of row to be inserted when person is already inside list
+function getInsertIndex(num){
+  var table = document.getElementById('list');
+  var arr = table.rows;
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i].cells.length === 8 && arr[i].cells[0].innerHTML == num){
+      return i;
+    }
+  }
+}
+
+//submit function. Triggered on button click
 function submitData(){
   var cellInput = [];
-  var person;
+  var person; //object of person being accused
   var row;
+  var sum;
+  var check;
+  var index;
+  var insertIndex;
+  var table;
+  var arr;
 
   //sets information of person
   var number;
@@ -56,12 +92,11 @@ function submitData(){
 
   if(grade != undefined && name != "" && date != "" && accuser != "")
   {
-    var sum;
-    var check;
-    if(findPerson(name) === -1){
+    //if person is not in list
+    if(findPerson(name, grade) === -1){
       check = 0;
 
-      var person = new Person(people.length + 1, grade, name, points);
+      person = new Person(people.length + 1, grade, name, points);
       //retrives new row
       row = newRow();
       //adds info to cell
@@ -69,26 +104,41 @@ function submitData(){
       number = people.length;
       sum = person.sum;
     }
+    //if person is already in list
     else{
       check = 1;
 
-      var index = findPerson(name);
+      //gets the no. property of person in the list
+      index = findPerson(name, grade);
+
+      //gets person object from people array
       person = people[index-1];
 
+      //index number of new row
+      insertIndex = getInsertIndex(index);
+
+      //updates person object's sum point, article count
       person.sum += points;
       person.count += 1;
       sum = person.sum;
 
+      //no. property of person in list
       number = index;
-      var table = document.getElementById('list');
-      table.insertRow(index);
-      row = table.rows[index];
+
+      //inserts row and following cells into table
+      table = document.getElementById('list');
+      table.insertRow(insertIndex);
+      row = table.rows[insertIndex];
       for(var i = 0; i < table.rows[0].cells.length; i++){
         row.insertCell();
       }
+
     }
+
+    //push data of cells into cellInput(array)
     cellInput.push(number); cellInput.push(grade); cellInput.push(name); cellInput.push(date); cellInput.push(accuser); cellInput.push(article); cellInput.push(points); cellInput.push(sum);
-    //set style of row
+
+    //push cell information from cellInput, then sets style of row(cells)
     for(var i = 0; i < row.cells.length; i++){
       row.cells[i].innerHTML = cellInput[i];
       row.cells[i].style.border = "1px solid transparent"
@@ -96,29 +146,25 @@ function submitData(){
       row.cells[i].style.borderRadius = "20px"
       row.cells[i].style.backgroundColor = "rgba(231, 231, 231, 0.55)"
     }
-    if(check){
-      var arr = document.getElementById('list').rows;
 
-      arr[findPerson(name)+1].deleteCell(0);
-      arr[findPerson(name)+1].deleteCell(0);
-      arr[findPerson(name)+1].deleteCell(0);
-      arr[findPerson(name)+1].deleteCell(4);
+    /*
+      additional procedure required for person already in list
+      deletes cells below the row that was inserted last
+      then increases rowSpan of top row by 1
+    */
+    
+    if(check){
+      arr = document.getElementById('list').rows;
+
+      //to merge cells using rowSpan, cells [0,1,2,7] below must be deleted first.
+      arr[insertIndex].deleteCell(0);
+      arr[insertIndex].deleteCell(0);
+      arr[insertIndex].deleteCell(0);
+      arr[insertIndex].deleteCell(4);
 
       for(var i = 0; i < overlap.length; i++){
-        arr[findPerson(name)].cells[overlap[i]].rowSpan = ""+person.count;
+        arr[getInsertIndex(index)].cells[overlap[i]].rowSpan = ""+person.count;
       }
     }
-  }
-}
-
-function setGrade(){
-  if(document.getElementById('one').checked){
-    return document.getElementById('one').value;
-  }
-  else if(document.getElementById('two').checked){
-    return document.getElementById('two').value;
-  }
-  else if(document.getElementById('three').checked){
-    return document.getElementById('three').value;
   }
 }
