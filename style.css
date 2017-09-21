@@ -9,12 +9,24 @@
   font-family: 'Oswald', sans-serif;
 }
 
-
-div.accuse{
-  background-color: #f2f2f2;
+div.search{
+  background-color: rgba(255, 148, 183, 0.51);
   border-radius: 20px;
+  border: solid rgb(150, 150, 150);
+  border-width: thin;
   padding: 20px 20px;
   margin-bottom: 20px;
+}
+div.accuse{
+  background-color: rgba(157, 250, 134, 0.4);
+  /*#f2f2f2*/
+  border-radius: 20px;
+  border-color: rgb(150, 150, 150);
+  border-style: solid;
+  border-width: thin;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  display: flex;
 }
 
 div.grade{
@@ -23,16 +35,23 @@ div.grade{
   margin-right: 3px;
 }
 
+.cell{
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(215, 215, 215, 0.4);
+  border-radius: 20px;
+  background-color: rgba(231, 231, 231, 0.55);
+}
+
 .radius{
   border-radius: 10px;
 }
 
 #button{
-  background-color:rgba(7, 66, 117, 0.3);
+  background-color:rgba(102, 178, 244, 0.4);
 }
 
 #button:hover{
-  background-color:rgba(7, 66, 117, 0.55);
+  background-color:rgba(102, 178, 244, 0.7);
 }
 
 td{
@@ -44,4 +63,15 @@ td{
   margin-bottom: 30px;
   text-align: center;
   border-bottom: solid 2px black;
+}
+
+#searchbtn{
+  border-radius: 10px;
+  border: solid thin rgb(150);
+  margin-left: 10px;
+}
+
+#searchBox{
+  display: flex;
+  with: 25%;
 }

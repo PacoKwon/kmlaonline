@@ -6,21 +6,47 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <script src="script.js"></script>
+    <script src="lib.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="row" id="top">
         <h1>KMLA COURT LIST</h1>
       </div>
+      <div class="search row" id="search" style="display:flex">
+        <!-- 이름 학년 입력하면 좌석 나오는 폼 -->
+        <div style="width: 25%"></div>
+        <div id="searchBox">
+          <form class="form-horizontal">
+            <label for="searchName">Name</label>
+            <input class="radius" id="searchName" type="search" placeholder=" Your Name"/>
+            <br />
+            <label>Grade</label>
+            <div class="grade"><label for="ten">10</label> <input style="margin-left:2px" id="ten" type="radio" name="searchGrade" value="10"/></div>
+            <div class="grade"><label for="ele">11</label><input style="margin-left:2px" id="ele" type="radio" name="searchGrade" value="11"/></div>
+            <div class="grade"><label for="twe">12</label><input style="margin-left:2px" id="twe" type="radio" name="searchGrade" value="12"/></div>
+          </form>
+        </div>
+        <div style="width:25%">
+          <div>
+            <form onsubmit="return false">
+              <button class="btn btn-default btn-sm" id="searchbtn" type="button" onclick="getAttendance()"><span class="glyphicon glyphicon-search"></span>SEARCH</button>
+            </form>
+          </div>
+          <div id="displayText">
+
+          </div>
+        </div>
+      </div>
       <!-- Accusation Box -->
-      <div class="accuse" id="accuse" style="display:flex">
+      <div class="accuse row" id="accuse">
         <!-- Box No.1 -->
         <div class="col-md-4" id="box1" style="display:inline-block">
           <form class="form-horizontal" onsubmit="return false">
             <!-- Name -->
             <div style="margin-bottom:10px">
               <label for="name">Name</label>
-              <input class="radius" id="name" type="text" placeholder=" name" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"/>
+              <input class="radius" id="name" type="text" placeholder=" Name" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"/>
             </div>
             <!-- Grade -->
             <div style="margin-bottom:10px">
@@ -42,10 +68,10 @@
             <!-- Article with + - glyphicons -->
             <div style="margin-bottom: 4px">
               <label for="article">Violated Article</label>
-              <button type="button" class="btn btn-default btn-sm" onclick="addArticleBox()">
+              <button type="button" class="btn btn-default btn-xs" onclick="addArticleBox()">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
-              <button type="button" class="btn btn-default btn-sm" onclick="removeArticleBox()">
+              <button type="button" class="btn btn-default btn-xs" onclick="removeArticleBox()">
                 <span class="glyphicon glyphicon-minus"></span>
               </button>
             </div>
@@ -59,7 +85,7 @@
             <!-- Accuser -->
             <div>
               <label for="accuser">Accused by</label>
-              <input class="radius" id="accuser" type="text" placeholder=" accuser" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"  />
+              <input class="radius" id="accuser" type="text" placeholder=" Accuser" onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"  />
             </div>
           </form>
         </div>
@@ -67,7 +93,7 @@
         <div class="col-md-1" id="submit" style="display:inline-block">
           <form class="form-horizontal">
             <div style="margin-bottom: 5px">
-              <button class="btn btn-default" id="button" type="button" onclick="appendData()">
+              <button class="btn btn-default" id="button" type="button" style="border-color:rgb(150, 150, 150)"onclick="appendData()">
                 <span class="glyphicon glyphicon-send"></span> SUBMIT</button>
             </div>
           </form>
@@ -75,9 +101,9 @@
       </div>
       <!-- Court List -->
       <div>
-        <table class="table table-striped border-radius: 5px" id="list" >
+        <table class="row table table-striped" id="list" >
           <thead>
-            <tr style="background-color:rgba(7, 66, 117, 0.3)">
+            <tr style="background-color:rgba(102, 178, 244, 0.4)">
               <td>No</td>
               <td>Grade</td>
               <td>Name</td>
